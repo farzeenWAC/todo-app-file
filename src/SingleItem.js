@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import Popup from "./Popup";
 
 const SingleItem = ({ name, index, id, deleteItemHandler }) => {
@@ -19,11 +17,13 @@ const SingleItem = ({ name, index, id, deleteItemHandler }) => {
           <div>
             {index + 1}. {name}
           </div>
-          <FontAwesomeIcon
-            className="single-item_trash"
+          <button
+            type="button"
+            className="delete-btn"
             onClick={() => setShowAlert(true)}
-            icon={faTrash}
-          />
+          >
+            Delete
+          </button>
         </div>
       </div>
     )
