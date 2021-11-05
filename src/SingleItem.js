@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import Popup from "./Popup";
+import { useForm } from "./useForm";
 
 const SingleItem = ({ name, index, id, deleteItemHandler }) => {
-  const [showAlert, setShowAlert] = useState(false);
+  const { showAlert, setShowAlert } = useForm();
   return (
     name && (
       <div>
         {showAlert && (
           <Popup
+            name={name}
             alert={setShowAlert}
             id={id}
             deleteItemHandler={deleteItemHandler}
